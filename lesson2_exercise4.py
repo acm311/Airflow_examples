@@ -55,6 +55,8 @@ def check_greater_than_zero(*args, **kwargs):
     #
     # if <REPLACE>:
     #     raise <REPLACE>
+    if num_records < 1:
+        raise ValueError(f"Data quality check failed. {table} contained 0 rows")
 
     logging.info(f"Data quality on table {table} check passed with {records[0][0]} records")
 
